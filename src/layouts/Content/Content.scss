@@ -1,17 +1,23 @@
 .content {
-  max-width: 621px;
-  max-height: 812px;
+  width: 531px;
+  height: 694px;
+  padding: 20px;
+  border-radius: var(--border-radius-l);
+  box-shadow: 0 0 17px 4px rgba(0, 0, 0, 0.25);
 
-  &--moning{
-    background-color: rgba(176, 53, 224, 0.55);
+  &--morning {
+    background-image: url("../../assets/images/bg-morning.jpg");
   }
-  &--day{
-    background-color: #0182ff;
+
+  &--day {
+    background-image: url("../../assets/images/bg-day.jpg");
   }
-  &--evening{
-    background-color: rgba(131, 89, 248, 0.58);
+
+  &--evening {
+    background-image: url("../../assets/images/bg-evening.jpg");
   }
-  &--night{
-    background-color: rgba(2, 0, 33, 0.94);
+
+  &--night {
+    background-image: url("../../assets/images/bg-night.jpg");
   }
 }

@@ -1,12 +1,9 @@
 import './Content.scss'
 import Search from "../../sections/Search";
 
-const Content = (props) => {
-  const {
-    className,
-  } = props
+const Content = () => {
   return (
-    <section className="content">
+    <section className="content content--evening">
       <Search />
     </section>
   )

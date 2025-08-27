@@ -1,16 +1,18 @@
 :root {
   --color-white: #ffffff;
   --color-black: #000000;
+  --color-white-01: rgba(255, 255, 255, 0.3);
 
   --bg-gradient: linear-gradient(#F5EEFF, #DAC3F8);
+  --bg-transparent: rgba(255, 255, 255, 0.10);
 
-  --border: var(--border-width-l) solid rgba(255, 255, 255, 0.3);
+  --border: var(--border-width-l) solid var(--color-white-01);
+  --focus: 0 0 2px 1px var(--color-white-01);
 
   --border-width-l: 1px;
 
   --border-radius-l: 12px;
   --border-radius-m: 6px;
-  --border-radius-s: 8px;
 
   --transition-duration: 0.2s;
 }
