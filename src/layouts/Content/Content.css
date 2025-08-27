@@ -1,0 +1,21 @@
+.content {
+  width: 531px;
+  height: 694px;
+  padding: 20px;
+  border-radius: var(--border-radius-l);
+  box-shadow: 0 0 17px 4px rgba(0, 0, 0, 0.25);
+}
+.content--morning {
+  background-image: url("../../assets/images/bg-morning.jpg");
+}
+.content--day {
+  background-image: url("../../assets/images/bg-day.jpg");
+}
+.content--evening {
+  background-image: url("../../assets/images/bg-evening.jpg");
+}
+.content--night {
+  background-image: url("../../assets/images/bg-night.jpg");
+}
+
+/*# sourceMappingURL=Content.css.map */
