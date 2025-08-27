@@ -1,0 +1,17 @@
+.content {
+  max-width: 621px;
+  max-height: 812px;
+
+  &--moning{
+    background-color: rgba(176, 53, 224, 0.55);
+  }
+  &--day{
+    background-color: #0182ff;
+  }
+  &--evening{
+    background-color: rgba(131, 89, 248, 0.58);
+  }
+  &--night{
+    background-color: rgba(2, 0, 33, 0.94);
+  }
+}
