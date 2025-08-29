@@ -2,6 +2,7 @@ import './Content.scss'
 import Search from "../../sections/Search"
 import classnames from "classnames"
 import {useEffect, useState} from "react"
+import Weather from "../../sections/Weather";
 
 const Content = () => {
 
@@ -28,6 +29,7 @@ const Content = () => {
   return (
     <section className={classnames("content", timeClass)}>
       <Search />
+      <Weather />
     </section>
   )
 }
