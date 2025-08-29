@@ -3,6 +3,7 @@ import Search from "../../sections/Search"
 import classnames from "classnames"
 import {useEffect, useState} from "react"
 import Weather from "../../sections/Weather";
+import HourlyWeatherList from "../../sections/HourlyWeatherList";
 
 const Content = () => {
 
@@ -30,6 +31,7 @@ const Content = () => {
     <section className={classnames("content", timeClass)}>
       <Search />
       <Weather />
+      <HourlyWeatherList />
     </section>
   )
 }

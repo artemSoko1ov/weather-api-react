@@ -1,0 +1,9 @@
+.hourly-weather-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  color: var(--color-white);
+}

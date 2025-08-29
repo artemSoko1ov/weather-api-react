@@ -1,0 +1,17 @@
+.hourly-weather-list {
+  width: 100%;
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-around;
+  gap: 45px;
+  border-top: var(--border);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  scroll-behavior: smooth;
+}
+.hourly-weather-list:hover {
+  scrollbar-color: var(--color-white-01) transparent;
+}
+
+/*# sourceMappingURL=HourlyWeatherList.css.map */

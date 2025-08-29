@@ -2,6 +2,9 @@
   width: 531px;
   height: 694px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border-radius: var(--border-radius-l);
   box-shadow: 0 0 17px 4px rgba(0, 0, 0, 0.25);
 }

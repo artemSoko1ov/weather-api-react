@@ -3,16 +3,18 @@ import SearchIcon from '../../assets/icons/search-icon.svg?react'
 import LocationsIcon from '../../assets/icons/locations-icon.svg?react'
 
 const Search = () => {
+
   return (
     <form
       className="search"
       role="search"
+
     >
       <div className="search__container">
         <SearchIcon style={{color: 'white'}} />
         <input
           className="search__input"
-          type="text"
+          type="search"
           placeholder="Moscow"
           aria-label="Введите город"
         />
