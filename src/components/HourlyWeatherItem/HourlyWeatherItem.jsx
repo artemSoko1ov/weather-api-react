@@ -4,7 +4,7 @@ const HourlyWeatherItem = (props) => {
   const {
     hour,
   } = props
-  const icon = `./icons/${hour.description.toLowerCase()}-icon.svg`
+  const icon = `${import.meta.env.BASE_URL}/icons/${hour.description.toLowerCase()}-icon.svg`
   return (
     <li className='hourly-weather-item'>
       <p className="hourly-weather-item__time">{hour.time}</p>

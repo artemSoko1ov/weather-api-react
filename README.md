@@ -1,12 +1,24 @@
-# React + Vite
+# Weather API React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение о погоде, созданное с использованием React и OpenWeather API.
 
-Currently, two official plugins are available:
+Особенности приложения:
+- Поиск погоды по городам.
+- Показ текущей температуры, описания и иконки состояния погоды.
+- Почасовая погода (сгенерирована локально из текущих данных).
+- Смена фона/стиля в зависимости от времени суток.
+- Сохранение последнего выбранного города в `localStorage`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Ссылки
+- Демо: https://artemsoko1ov.github.io/weather-api-react/
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Используемые технологии
+- React 19
+- Vite
+- Sass
+- classnames
+- OpenWeather API  

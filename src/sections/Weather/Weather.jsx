@@ -7,7 +7,7 @@ const Weather = (props) => {
 
   const temperature = data ? Math.round(data?.main?.temp) : '--'
   const description = data ? data?.weather[0]?.main : 'no-result'
-  const icon = `./icons/${description.toLowerCase()}-icon.svg`
+  const icon = `${import.meta.env.BASE_URL}/icons/${description.toLowerCase()}-icon.svg`
 
   return (
     <div className="weather">
