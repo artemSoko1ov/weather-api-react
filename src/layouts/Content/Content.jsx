@@ -13,6 +13,13 @@ const Content = () => {
   const [weatherData, setWeatherData] = useState(null)
 
   useEffect(() => {
+    updateTimeClass()
+    const savedCity = localStorage.getItem("lastCity") || "Moscow"
+    setCity(savedCity)
+    handleSearch(savedCity)
+  }, [])
+
+  const updateTimeClass = () => {
     const hours = new Date().getHours()
 
     let partOfDay
@@ -26,23 +33,20 @@ const Content = () => {
       partOfDay = 'night';
     }
     setTimeClass(`content--${partOfDay}`)
-
-    const savedCity = localStorage.getItem("lastCity") || "Moscow"
-    setCity(savedCity)
-    handleSearch(savedCity)
-  }, [])
+  }
 
   const handleSearch = async (cityName) => {
     try {
       const data = await getWeatherDetails(cityName)
-      console.log(data)
+      setCity(data.name)
       setWeatherData(data)
-      setCity(cityName)
       localStorage.setItem("lastCity", cityName)
+      console.log(data)
     } catch (e) {
       console.log(e)
     }
   }
+
   return (
     <section className={classnames("content", timeClass)}>
       <Search
