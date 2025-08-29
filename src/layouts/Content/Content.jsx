@@ -4,6 +4,7 @@ import classnames from "classnames"
 import {useEffect, useState} from "react"
 import Weather from "../../sections/Weather";
 import HourlyWeatherList from "../../sections/HourlyWeatherList";
+import getWeatherDetails from "../../API/getWeatherDetails.js"
 
 const Content = () => {
 
@@ -27,10 +28,23 @@ const Content = () => {
 
   }, [])
 
+  const [weatherData, setWeatherData] = useState(null)
+
+  const handleSearch = async (city) => {
+    try {
+      const data = await getWeatherDetails(city)
+      console.log(data)
+      setWeatherData(data)
+    } catch (e) {
+      console.log(e)
+    }
+  }
   return (
     <section className={classnames("content", timeClass)}>
-      <Search />
-      <Weather />
+      <Search onSearch={handleSearch} />
+      <Weather
+        data={weatherData}
+      />
       <HourlyWeatherList />
     </section>
   )
