@@ -11,6 +11,7 @@ const Content = () => {
   const [timeClass, setTimeClass] = useState('day')
   const [city, setCity] = useState("Moscow")
   const [weatherData, setWeatherData] = useState(null)
+  const [hourlyData, setHourlyData] = useState([])
 
   useEffect(() => {
     updateTimeClass()
@@ -45,12 +46,26 @@ const Content = () => {
       } else {
         localStorage.setItem("lastCity", data.name)
       }
-      console.log(data)
+      generateHourlyData()
     } catch (e) {
       console.log(e)
     }
   }
 
+  const generateHourlyData = () => {
+    const now = new Date()
+    const currentHour = now.getHours()
+    const hours = Array.from({length: 24}, (_, i) => i)
+    const orderedHours = [...hours.slice(currentHour), ...hours.slice(0, currentHour)]
+
+    const mockHourly = orderedHours.map(hour => ({
+      time: `${hour.toString().padStart(2, '0')}:00`,
+      temp: Math.floor(Math.random() * 10) + 15,
+      description: ['Clear', 'Clouds', 'Rain', 'Mist', 'Snow', 'Thunderstorm'][Math.floor(Math.random() * 3)]
+    }))
+
+    setHourlyData(mockHourly)
+  }
   return (
     <section className={classnames("content", timeClass)}>
       <Search
@@ -60,7 +75,7 @@ const Content = () => {
       <Weather
         data={weatherData}
       />
-      <HourlyWeatherList />
+      <HourlyWeatherList data={hourlyData}/>
     </section>
   )
 }

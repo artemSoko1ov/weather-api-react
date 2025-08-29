@@ -1,21 +1,15 @@
 import './HourlyWeatherList.scss'
 import HourlyWeatherItem from "../../components/HourlyWeatherItem";
 
-const HourlyWeatherList = () => {
+const HourlyWeatherList = (props) => {
+  const {
+    data,
+  } = props
   return (
     <ul className='hourly-weather-list'>
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
-      <HourlyWeatherItem />
+      {data.map((hour, index) => (
+        <HourlyWeatherItem hour={hour} key={index}/>
+      ))}
     </ul>
   )
 }
