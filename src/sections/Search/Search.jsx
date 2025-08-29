@@ -6,6 +6,7 @@ import {useState} from "react";
 const Search = (props) => {
   const {
     onSearch,
+    placeholder,
   } = props
   const [searchValue, setSearchValue] = useState("")
 
@@ -13,6 +14,7 @@ const Search = (props) => {
     event.preventDefault()
     if (!searchValue.trim()) return
     onSearch(searchValue)
+    setSearchValue("")
   }
   return (
     <form
@@ -25,7 +27,7 @@ const Search = (props) => {
         <input
           className="search__input"
           type="search"
-          placeholder="Moscow"
+          placeholder={placeholder}
           aria-label="Введите город"
           value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
