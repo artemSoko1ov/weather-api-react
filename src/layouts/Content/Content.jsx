@@ -35,12 +35,16 @@ const Content = () => {
     setTimeClass(`content--${partOfDay}`)
   }
 
-  const handleSearch = async (cityName) => {
+  const handleSearch = async (query) => {
     try {
-      const data = await getWeatherDetails(cityName)
+      const data = await getWeatherDetails(query)
       setCity(data.name)
       setWeatherData(data)
-      localStorage.setItem("lastCity", cityName)
+      if (typeof query === 'object') {
+        localStorage.setItem("lastCity", 'Moscow')
+      } else {
+        localStorage.setItem("lastCity", data.name)
+      }
       console.log(data)
     } catch (e) {
       console.log(e)

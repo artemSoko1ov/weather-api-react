@@ -16,6 +16,18 @@ const Search = (props) => {
     onSearch(searchValue)
     setSearchValue("")
   }
+  const handleLocationSearch = () => {
+    navigator.geolocation.getCurrentPosition(
+      position => {
+        const {latitude, longitude} = position.coords
+        onSearch({ latitude, longitude })
+      },
+      () => {
+        alert('Location access denied. Please enable permissions to use this feature.')
+      }
+    )
+  }
+
   return (
     <form
       className="search"
@@ -28,7 +40,7 @@ const Search = (props) => {
           className="search__input"
           type="search"
           placeholder={placeholder}
-          aria-label="Введите город"
+          aria-label="Input city"
           value={searchValue}
           onChange={(event) => setSearchValue(event.target.value)}
         />
@@ -36,7 +48,8 @@ const Search = (props) => {
       <button
         className="search__button"
         type="button"
-        aria-label="Использовать геолокацию"
+        aria-label="Use geolocation"
+        onClick={handleLocationSearch}
       >
         <LocationsIcon style={{color: 'white'}} />
       </button>
